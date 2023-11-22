@@ -1,3 +1,4 @@
-datasets/listas/list_pdb_xray_scwrl4
-datasets/listas/list_pdb_xray_faspr
-datasets/listas/list_pdb_xray_oscar
+datasets/listas/lista_pdb_XRAY_scwrl4
+datasets/listas/lista_pdb_XRAY_faspr
+datasets/listas/lista_pdb_XRAY_oscar
+datasets/listas/lista_pdb_XRAY_rota4

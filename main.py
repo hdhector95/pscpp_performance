@@ -12,19 +12,17 @@ __description__ = \
 __author__ = "Hector Diaz"
 __date__ = "08092021"
 
-import os
-from lib.xls_funtions import print_to_excel
-from lib.pdb_torsionCHI import torsionCHI, search_line
-import configparser
+import os, configparser
+from lib.funtions import print_to_excel, search_line
+from lib.pdb_torsionCHI import torsionCHI
 
 
 def main():
     """
     Call if this is called from the command line.
     Calcula el porcentaje de residuos correctos segun la medida de precision absoluta basada en un angulo de aceptacion
-    ejecucion: python3 precision_absoluta.py
+    ejecucion: python3 main.py
     """
-
     # leer archivos con lista de ubicaciones de pdbs el primero debe contener a los originales
     # se espera que las listas esten ordenadas y tengan la misma cantidad de pdbs, en el caso que un pdb sea procesable
     # se debe colocar *** en la lista en el caso en que un pdb sea improcesable
@@ -36,7 +34,8 @@ def main():
     config = configparser.ConfigParser()
     config.read(os.path.abspath('.')+"/config.ini")
     correct_angle = config.getint('configuracion', 'correct_angle')  # angulo tomado como correcto
-    print_pdb = config.getboolean('configuracion', 'print_pdb_console')  # imprimir pdbs en consola
+    print_pdb_console = config.getboolean('configuracion', 'print_pdb_console')  # imprimir pdbs en consola
+    print_pdb_excel = config.getboolean('configuracion', 'print_pdb_excel')  # imprimir pdbs en excel
     pdb_origin_file = os.path.abspath('.')+"/"+config.get('configuracion','pdb_origin_file') # archivo con lista de pdbs originales
     pdb_processed_files = os.path.abspath('.')+"/"+config.get('configuracion','pdb_processed_files') # archivo con lista de pdbs procesados
 
@@ -103,8 +102,8 @@ def main():
                 rotameros_metodo[j] = rotameros_metodo[j][:-1] + "%10.2F%10.2F" % (ori_chi1, ori_chi2)
 
                 # Calculo de diferencia entre angulos teniendo en cuenta el cuadrante en el que se encuentra.
-                Sx1 = 360
-                Sx1x2 = 360
+                Sx1 = 360 # valor de diferencia de angulo para x1, se inicializa en 360 para que sea mayor a cualquier valor
+                Sx1x2 = 360 # valor de diferencia de angulo para x1+2, se inicializa en 360 para que sea mayor a cualquier valor
                 # consideraciones para evaluar x1 y x1x2
                 if ori_chi1 != 0 and pred_chi1 != 0:
                     # Se resta el valor menor al mayor para obtener el valor absoluto de la diferencia
@@ -139,7 +138,7 @@ def main():
                         "0", "0")  # agregar el valor para la tabla
                 if Sx1 <= correct_angle:
                     rotameros_metodo[j] = rotameros_metodo[j] + "%10s" % ("1")
-                    correctox1 = correctox1 + 1  # aumentar la cantidad de correctos para el calculo de la probabilidad
+                    correctox1 = correctox1 + 1  # aumentar la cantidad de correctos para el calculo de porcentaje
                     if Sx1x2 <= correct_angle:
                         rotameros_metodo[j] = rotameros_metodo[j] + "%10s" % ("1\n")
                         correctox1x2 = correctox1x2 + 1
@@ -148,8 +147,8 @@ def main():
                 else:
                     rotameros_metodo[j] = rotameros_metodo[j] + "%10s%10s" % ("0", "0\n")
 
-            prob_x1 = correctox1 * 100 / evaluadox1
-            prob_x1x2 = correctox1x2 * 100 / evaluadox1x2
+            prob_x1 = correctox1 * 100 / evaluadox1 # probabilidad de correctos para x1
+            prob_x1x2 = correctox1x2 * 100 / evaluadox1x2 # probabilidad de correctos para x1+2
             # impresion de resultados
             estado_arte = pdbs_file_key[k]
             print("Estado del arte: %s" % (estado_arte))
@@ -187,10 +186,12 @@ def main():
                     'correctox1x2': res_metodos[estado_arte]['correctox1x2'] + correctox1x2,
                 }
             # imprimir en consola
-            if print_pdb:
+            if print_pdb_console:
                 print()
                 print("".join(rotameros_metodo))
-            # print_to_excel(rotameros_metodo, pdb_name, estado_arte)
+            # imprimir en excel los resultados
+            if print_pdb_excel:
+                print_to_excel(rotameros_metodo, pdb_name, estado_arte)
 
     # imprimir res_metodos
     for est_arte in res_metodos:
@@ -202,8 +203,7 @@ def main():
             res_metodos[est_arte]['correctox1'], res_metodos[est_arte]['correctox1x2']))
         p1 = float(res_metodos[est_arte]['correctox1']) * 100 / float(res_metodos[est_arte]['evaluadox1'])
         p2 = float(res_metodos[est_arte]['correctox1x2']) * 100 / float(res_metodos[est_arte]['evaluadox1x2'])
-        # print(p1)
-        # print(p2)
+
         print('%15s%15.2F%17s%15.2F' % ('Probabilidad X1', p1, 'Probabilidad X1+2', p2))
         print('#############################################')
         print()

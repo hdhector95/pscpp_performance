@@ -340,16 +340,3 @@ def torsionCHI(pdb_file):
     out.insert(0, header)
     return out
 
-def search_line(rotamero_nativo, residuo, cadena):
-    """
-    Busca un rotamero en la lista de rotameros nativos
-    """
-    res = None
-    for linea in rotamero_nativo:
-        if linea[47:51]:
-            if linea[46:47] == cadena:
-                if linea[47:51] == residuo:
-                    res = linea
-    return res
-
-

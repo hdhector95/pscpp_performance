@@ -6,9 +6,9 @@ import os
 def print_to_excel(rotameros, pdb_name, estado_arte):
 
     # crear directorio estado_arte si no existe
-    if not os.path.exists('resultados/casp14/'+estado_arte):
-        os.makedirs('resultados/casp14/'+estado_arte)
-    xls_name= 'resultados/casp14/'+estado_arte+'/pa_'+pdb_name+"_"+estado_arte+'.xlsx'
+    if not os.path.exists(os.path.abspath('.')+'/resultados/'+estado_arte):
+        os.makedirs(os.path.abspath('.')+'/resultados/'+estado_arte)
+    xls_name= os.path.abspath('.')+'/resultados/'+estado_arte+'/pa_'+pdb_name+"_"+estado_arte+'.xlsx'
     workbook = xlsxwriter.Workbook(xls_name)
     worksheet = workbook.add_worksheet()
     row = 0
@@ -44,3 +44,15 @@ def print_to_excel(rotameros, pdb_name, estado_arte):
             col += 1
         row += 1
     workbook.close()
+
+def search_line(rotamero_nativo, residuo, cadena):
+    """
+    Busca un rotamero en la lista de rotameros nativos
+    """
+    res = None
+    for linea in rotamero_nativo:
+        if linea[47:51]:
+            if linea[46:47] == cadena:
+                if linea[47:51] == residuo:
+                    res = linea
+    return res
