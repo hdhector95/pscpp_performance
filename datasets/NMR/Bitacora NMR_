@@ -1,0 +1,13 @@
+Bitacora NMR. 
+
+- Luego de descargar las muestras del Protein DataBank, procedimos a escribir un codigo usando Biopython de tal manera a procesar los pdbs y cortarlos pdbs de tal manera que tengamos un archivo por cada modelo que contenga la muestra original. 
+
+- Asi tambien al mismo codigo le agregamos una funcion tal que durante una iteracion sobre el pdb si encontrase una entrada con HETAM, FMT, y HOH, estas lineas serian eliminadas del pdb. 
+
+- Notamos que entre nuestro set de muestras existe un pdb que contienen modelos con residuos de posiciones negativas (2msn), puesto que escribimos otro script en biopython tal que sea capaz de reordenar el pdb para que empieze en la posicion 0. 
+
+- Una vez los modelos estuvieran listos se crearon directorios de in/out para el procesamiento de cada metodo de estado del arte.
+
+- Escribimos scritps de ejecucion para cada metodo del estado del arte sobre el set completo de muestras y para cada uno de los modelos que los componen. 
+
+- Se corrieron los scripts por metodo y se calculo el tiempo de ejecucion de cada script. 

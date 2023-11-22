@@ -1,0 +1,149 @@
+Bitacora CASP15
+
+- Desde https://predictioncenter.org/casp15/targetlist.cgi se consulto los targets del experimento para obtener las muestras. 
+- Se procedio a descargar del PDB los archivos y a clasificarlos por ID, Metodo, Resolucion.
+- Se removieron los HETAM, HOH y se paso a fixed
+- Se documentaron las cadenas discontinuas y posiciones negativas (bitacoracasp15.log)
+- Con las muestras ya en Fixed se corrio cada metodo
+
+FASPR
+- Caso 7pbl: Fueron removidas las cadenas U y V. 
+- Caso 7pbp: Fueron removidas las cadenas U y V. 
+- Caso 7pbr: Fueron removidas las cadenas U y V. 
+- Caso 7qvb: (removed B)
+	ATOM   3247  N   ARG A 223      22.211  15.782  29.848  1.00101.33           N  
+	ATOM   3248  CA BARG A 223      20.957  16.520  30.175  1.00106.00           C  
+	ATOM   3249  C   ARG A 223      20.010  16.475  28.970  1.00107.63           C  
+	ATOM   3250  O   ARG A 223      18.826  16.123  29.167  1.00113.08           O  
+	ATOM   3251  CB BARG A 223      21.260  17.967  30.581  1.00105.74           C  
+	ATOM   3252  CG BARG A 223      21.881  18.097  31.964  1.00109.80           C  
+	ATOM   3253  CD BARG A 223      22.453  19.471  32.264  1.00112.16           C  
+	ATOM   3254  NE BARG A 223      23.175  19.461  33.531  1.00114.37           N  
+	ATOM   3255  CZ BARG A 223      23.809  20.502  34.067  1.00114.08           C  
+	ATOM   3256  NH1BARG A 223      23.825  21.674  33.449  1.00122.43           N  
+	ATOM   3257  NH2BARG A 223      24.428  20.366  35.228  1.00109.75           N  
+	ATOM   3258  H   ARG A 223      22.951  16.316  29.826  1.00 98.80           H  
+	ATOM   3259  HA BARG A 223      20.520  16.063  30.935  1.00107.52           H  
+	ATOM   3260  HB2BARG A 223      21.875  18.362  29.914  1.00104.08           H  
+	ATOM   3261  HB3BARG A 223      20.417  18.483  30.560  1.00107.83           H  
+	ATOM   3262  HG2BARG A 223      21.195  17.887  32.645  1.00111.37           H  
+	ATOM   3263  HG3BARG A 223      22.604  17.428  32.056  1.00108.24           H  
+	ATOM   3264  HD2BARG A 223      23.067  19.739  31.536  1.00110.93           H  
+	ATOM   3265  HD3BARG A 223      21.719  20.131  32.308  1.00113.40           H  
+	ATOM   3266  HE BARG A 223      23.194  18.688  33.990  1.00114.38           H  
+	ATOM   3267 HH11BARG A 223      23.406  21.775  32.661  1.00119.88           H  
+	ATOM   3268 HH12BARG A 223      24.256  22.369  33.822  1.00120.11           H  
+	ATOM   3269 HH21BARG A 223      24.420  19.572  35.651  1.00111.99           H  
+	ATOM   3270 HH22BARG A 223      24.858  21.066  35.593  1.00109.76           H  
+
+	to: 
+	ATOM   3247  N   ARG A 223      22.211  15.782  29.848  1.00101.33           N  
+	ATOM   3248  CA  ARG A 223      20.957  16.520  30.175  1.00106.00           C  
+	ATOM   3249  C   ARG A 223      20.010  16.475  28.970  1.00107.63           C  
+	ATOM   3250  O   ARG A 223      18.826  16.123  29.167  1.00113.08           O  
+	ATOM   3251  CB  ARG A 223      21.260  17.967  30.581  1.00105.74           C  
+	ATOM   3252  CG  ARG A 223      21.881  18.097  31.964  1.00109.80           C  
+	ATOM   3253  CD  ARG A 223      22.453  19.471  32.264  1.00112.16           C  
+	ATOM   3254  NE  ARG A 223      23.175  19.461  33.531  1.00114.37           N  
+	ATOM   3255  CZ  ARG A 223      23.809  20.502  34.067  1.00114.08           C  
+	ATOM   3256  NH1 ARG A 223      23.825  21.674  33.449  1.00122.43           N  
+	ATOM   3257  NH2 ARG A 223      24.428  20.366  35.228  1.00109.75           N  
+	ATOM   3258  H   ARG A 223      22.951  16.316  29.826  1.00 98.80           H  
+	ATOM   3259  HA  ARG A 223      20.520  16.063  30.935  1.00107.52           H  
+	ATOM   3260  HB2 ARG A 223      21.875  18.362  29.914  1.00104.08           H  
+	ATOM   3261  HB3 ARG A 223      20.417  18.483  30.560  1.00107.83           H  
+	ATOM   3262  HG2 ARG A 223      21.195  17.887  32.645  1.00111.37           H  
+	ATOM   3263  HG3 ARG A 223      22.604  17.428  32.056  1.00108.24           H  
+	ATOM   3264  HD2 ARG A 223      23.067  19.739  31.536  1.00110.93           H  
+	ATOM   3265  HD3 ARG A 223      21.719  20.131  32.308  1.00113.40           H  
+	ATOM   3266  HE  ARG A 223      23.194  18.688  33.990  1.00114.38           H  
+	ATOM   3267 HH11 ARG A 223      23.406  21.775  32.661  1.00119.88           H  
+	ATOM   3268 HH12 ARG A 223      24.256  22.369  33.822  1.00120.11           H  
+	ATOM   3269 HH21 ARG A 223      24.420  19.572  35.651  1.00111.99           H  
+	ATOM   3270 HH22 ARG A 223      24.858  21.066  35.593  1.00109.76           H  
+
+- Caso 7ux8:
+	ATOM  10181  N  BARG B 248      41.958  47.108  71.888  0.40 17.73           N  
+	ATOM  10182  N  CARG B 248      41.904  47.137  71.839  0.60 17.76           N  
+	ATOM  10183  CA BARG B 248      43.042  48.087  71.921  0.40 18.77           C  
+	ATOM  10184  CA CARG B 248      43.038  48.045  71.908  0.60 19.13           C  
+	ATOM  10185  C   ARG B 248      43.212  48.670  70.525  1.00 18.62           C  
+	ATOM  10186  O   ARG B 248      43.481  47.941  69.565  1.00 21.77           O  
+	ATOM  10187  CB BARG B 248      44.370  47.471  72.368  0.40 22.57           C  
+	ATOM  10188  CB CARG B 248      44.272  47.257  72.355  0.60 21.82           C  
+	ATOM  10189  CG BARG B 248      44.350  46.819  73.732  0.40 21.68           C  
+	ATOM  10190  CG CARG B 248      45.463  48.103  72.740  0.60 24.46           C  
+	ATOM  10191  CD BARG B 248      45.769  46.539  74.212  0.40 28.80           C  
+	ATOM  10192  CD CARG B 248      46.717  47.256  72.928  0.60 26.33           C  
+	ATOM  10193  NE BARG B 248      45.806  45.604  75.330  0.40 31.62           N  
+	ATOM  10194  NE CARG B 248      46.500  46.146  73.852  0.60 21.94           N  
+	ATOM  10195  CZ BARG B 248      46.917  45.198  75.930  0.40 30.97           C  
+	ATOM  10196  CZ CARG B 248      47.264  45.063  73.930  0.60 26.77           C  
+	ATOM  10197  NH1BARG B 248      48.077  45.798  75.719  0.40 26.81           N  
+	ATOM  10198  NH1CARG B 248      48.278  44.870  73.103  0.60 25.89           N  
+	ATOM  10199  NH2BARG B 248      46.857  44.183  76.788  0.40 43.78           N  
+	ATOM  10200  NH2CARG B 248      46.994  44.143  74.852  0.60 25.19           N  
+	ATOM  10201  H  BARG B 248      42.078  46.488  71.304  0.40 21.28           H  
+	ATOM  10202  H  CARG B 248      41.963  46.576  71.190  0.60 21.31           H  
+	ATOM  10203  HA BARG B 248      42.799  48.786  72.548  0.40 22.53           H  
+	ATOM  10204  HA CARG B 248      42.919  48.761  72.552  0.60 22.95           H  
+	ATOM  10205  HB2BARG B 248      44.623  46.790  71.725  0.40 27.08           H  
+	ATOM  10206  HB2CARG B 248      44.031  46.723  73.128  0.60 26.18           H  
+	ATOM  10207  HB3BARG B 248      45.040  48.172  72.390  0.40 27.08           H  
+	ATOM  10208  HB3CARG B 248      44.548  46.679  71.626  0.60 26.18           H  
+	ATOM  10209  HG2BARG B 248      43.920  47.411  74.369  0.40 26.02           H  
+	ATOM  10210  HG2CARG B 248      45.636  48.751  72.040  0.60 29.35           H  
+	ATOM  10211  HG3BARG B 248      43.869  45.978  73.683  0.40 26.02           H  
+	ATOM  10212  HG3CARG B 248      45.276  48.559  73.576  0.60 29.35           H  
+	ATOM  10213  HD2BARG B 248      46.281  46.156  73.483  0.40 34.56           H  
+	ATOM  10214  HD2CARG B 248      46.985  46.888  72.072  0.60 31.60           H  
+	ATOM  10215  HD3BARG B 248      46.176  47.371  74.502  0.40 34.56           H  
+	ATOM  10216  HD3CARG B 248      47.427  47.813  73.287  0.60 31.60           H  
+	ATOM  10217  HE BARG B 248      45.058  45.296  75.620  0.40 37.94           H  
+	ATOM  10218  HE CARG B 248      45.827  46.197  74.385  0.60 26.33           H  
+	ATOM  10219 HH11BARG B 248      48.122  46.469  75.182  0.40 32.17           H  
+	ATOM  10220 HH11CARG B 248      48.455  45.452  72.495  0.60 31.07           H  
+	ATOM  10221 HH12BARG B 248      48.785  45.518  76.118  0.40 32.17           H  
+	ATOM  10222 HH12CARG B 248      48.760  44.161  73.172  0.60 31.07           H  
+	ATOM  10223 HH21BARG B 248      46.104  43.799  76.947  0.40 52.54           H  
+	ATOM  10224 HH21CARG B 248      46.331  44.254  75.388  0.60 30.23           H  
+	ATOM  10225 HH22BARG B 248      47.570  43.911  77.183  0.40 52.54           H  
+	ATOM  10226 HH22CARG B 248      47.483  43.438  74.912  0.60 30.23           H  
+
+	to: (removed B)
+	ATOM  10182  N   ARG B 248      41.904  47.137  71.839  0.60 17.76           N  
+	ATOM  10184  CA  ARG B 248      43.038  48.045  71.908  0.60 19.13           C  
+	ATOM  10185  C   ARG B 248      43.212  48.670  70.525  1.00 18.62           C  
+	ATOM  10186  O   ARG B 248      43.481  47.941  69.565  1.00 21.77           O  
+	ATOM  10188  CB  ARG B 248      44.272  47.257  72.355  0.60 21.82           C  
+	ATOM  10190  CG  ARG B 248      45.463  48.103  72.740  0.60 24.46           C  
+	ATOM  10192  CD  ARG B 248      46.717  47.256  72.928  0.60 26.33           C  
+	ATOM  10194  NE  ARG B 248      46.500  46.146  73.852  0.60 21.94           N  
+	ATOM  10196  CZ  ARG B 248      47.264  45.063  73.930  0.60 26.77           C  
+	ATOM  10198  NH1 ARG B 248      48.278  44.870  73.103  0.60 25.89           N  
+	ATOM  10200  NH2 ARG B 248      46.994  44.143  74.852  0.60 25.19           N  
+	ATOM  10202  H   ARG B 248      41.963  46.576  71.190  0.60 21.31           H  
+	ATOM  10204  HA  ARG B 248      42.919  48.761  72.552  0.60 22.95           H  
+	ATOM  10206  HB2 ARG B 248      44.031  46.723  73.128  0.60 26.18           H  
+	ATOM  10208  HB3 ARG B 248      44.548  46.679  71.626  0.60 26.18           H  
+	ATOM  10210  HG2 ARG B 248      45.636  48.751  72.040  0.60 29.35           H  
+	ATOM  10212  HG3 ARG B 248      45.276  48.559  73.576  0.60 29.35           H  
+	ATOM  10214  HD2 ARG B 248      46.985  46.888  72.072  0.60 31.60           H  
+	ATOM  10216  HD3 ARG B 248      47.427  47.813  73.287  0.60 31.60           H  
+	ATOM  10218  HE  ARG B 248      45.827  46.197  74.385  0.60 26.33           H  
+	ATOM  10220 HH11 ARG B 248      48.455  45.452  72.495  0.60 31.07           H  
+	ATOM  10222 HH12 ARG B 248      48.760  44.161  73.172  0.60 31.07           H  
+	ATOM  10224 HH21 ARG B 248      46.331  44.254  75.388  0.60 30.23           H  
+	ATOM  10226 HH22 ARG B 248      47.483  43.438  74.912  0.60 30.23           H  
+
+OSCAR
+- Se obtuvo el siguiente mensaje al ejecutar sobre los siguientes PDBs:
+	- 7pbl.pdb (The size of the modeled protein is over limit!)
+	- 7pbp.pdb
+	- 7pbr.pdb
+	- 7uus.pdb
+	- 8fef.pdb (The number of total residues is over the limit 3000!)
+- Se hizo un split de estos pdbs en cadenas para hacer ejecutar el metodo y luego promediar el resultado de precision. 
+
+
+

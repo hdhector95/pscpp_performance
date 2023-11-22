@@ -1,0 +1,18 @@
+BITACORA CASP14.
+
+- Se construyeron todos los targets obteniendo 34 pdbs con descripcion especificada para cada uno de 
+  https://predictioncenter.org/casp14/targetlist.cgi
+
+FASPR
+
+- Solo la muestra T1041.pdb cuenta con un error dado que: "error: backbone is incomplete at residue: ASP1"
+	ATOM  11976  CA  ASP     1     210.936 127.490  64.629  1.00 86.20           C  
+	ATOM  11977  C   ASP     1     210.916 128.854  63.944  1.00 92.11           C  
+	ATOM  11978  O   ASP     1     211.936 129.322  63.428  1.00 96.52           O  
+	ATOM  11979  CB  ASP     1     211.700 127.533  65.959  1.00 98.84           C  
+	ATOM  11980  CG  ASP     1     212.950 128.399  65.911  1.00104.97           C  
+	ATOM  11981  OD1 ASP     1     212.832 129.634  66.061  1.00103.54           O  
+	ATOM  11982  OD2 ASP     1     214.054 127.843  65.725  1.00106.47           O  
+
+	Dado que faltan atomos para el aminoacido este es removido del target. 
+

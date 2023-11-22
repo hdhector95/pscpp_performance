@@ -1,0 +1,6 @@
+{
+  "correct_angle": 20,
+  "print_pdb_console": true,
+  "pdb_origin_file": "pdb_list_origin",
+  "pdb_processed_files": "pdb_list_processed"
+}

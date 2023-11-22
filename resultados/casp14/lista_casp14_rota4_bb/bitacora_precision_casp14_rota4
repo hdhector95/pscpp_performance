@@ -1,0 +1,200 @@
+/bin/python2.7 /home/meraki/Proyectos/biotesis/precision_absoluta.py lista_casp14_original lista_casp14_rota4_bb
+#######################################################
+///// Resultados de medida por Exactitud Absoluta /////
+Error: no se encontro el rotamero en el pdb nativo                         T1024 THR "  405
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1024
+               X1(%)             X1+2(%)
+               30.00               11.00
+Evaluado         258                 135
+Correcto          79                  15
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1025
+               X1(%)             X1+2(%)
+               86.00               70.00
+Evaluado         189                 148
+Correcto         163                 105
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1026
+               X1(%)             X1+2(%)
+               67.00               41.00
+Evaluado         126                  81
+Correcto          85                  34
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1027
+               X1(%)             X1+2(%)
+               46.00               18.00
+Evaluado         137                 105
+Correcto          64                  19
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1030
+               X1(%)             X1+2(%)
+               75.00               47.00
+Evaluado         239                 187
+Correcto         181                  89
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1031
+               X1(%)             X1+2(%)
+               53.00               27.00
+Evaluado          86                  74
+Correcto          46                  20
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1032
+               X1(%)             X1+2(%)
+               69.00               44.00
+Evaluado         146                 118
+Correcto         101                  53
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1033
+               X1(%)             X1+2(%)
+               59.00               41.00
+Evaluado          93                  77
+Correcto          55                  32
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1035
+               X1(%)             X1+2(%)
+               61.00               31.00
+Evaluado          94                  74
+Correcto          58                  23
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1036s1
+               X1(%)             X1+2(%)
+               77.00               56.00
+Evaluado         523                 375
+Correcto         407                 211
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1037
+               X1(%)             X1+2(%)
+               65.00               46.00
+Evaluado         361                 271
+Correcto         238                 125
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1038
+               X1(%)             X1+2(%)
+               76.00               52.00
+Evaluado         173                 117
+Correcto         132                  61
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1039
+               X1(%)             X1+2(%)
+               59.00               36.00
+Evaluado         150                 127
+Correcto          89                  46
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1040
+               X1(%)             X1+2(%)
+               58.00               30.00
+Evaluado         118                  99
+Correcto          69                  30
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1041
+               X1(%)             X1+2(%)
+               71.00               46.00
+Evaluado         211                 166
+Correcto         150                  78
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1042
+               X1(%)             X1+2(%)
+               61.00               39.00
+Evaluado         255                 208
+Correcto         156                  82
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1043
+               X1(%)             X1+2(%)
+               65.00               40.00
+Evaluado         132                  97
+Correcto          86                  39
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1046s1
+               X1(%)             X1+2(%)
+               86.00               58.00
+Evaluado          66                  51
+Correcto          57                  30
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1046s2
+               X1(%)             X1+2(%)
+               91.00               73.00
+Evaluado         123                  95
+Correcto         113                  70
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1049
+               X1(%)             X1+2(%)
+               94.00               82.00
+Evaluado         115                  78
+Correcto         109                  64
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1054
+               X1(%)             X1+2(%)
+               89.00               78.00
+Evaluado         126                  91
+Correcto         113                  71
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1056
+               X1(%)             X1+2(%)
+               91.00               68.00
+Evaluado         143                 114
+Correcto         131                  78
+Error: no se encontro el rotamero en el pdb nativo                         T1064 PHE "  105
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1064
+               X1(%)             X1+2(%)
+               32.00                6.00
+Evaluado          87                  46
+Correcto          28                   3
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1067
+               X1(%)             X1+2(%)
+               85.00               76.00
+Evaluado         185                 135
+Correcto         159                 103
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1073
+               X1(%)             X1+2(%)
+               62.00               39.00
+Evaluado          51                  46
+Correcto          32                  18
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1074
+               X1(%)             X1+2(%)
+               90.00               67.00
+Evaluado         110                  78
+Correcto          99                  53
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1079
+               X1(%)             X1+2(%)
+               89.00               75.00
+Evaluado         435                 340
+Correcto         388                 255
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1080
+               X1(%)             X1+2(%)
+               73.00               57.00
+Evaluado          98                  57
+Correcto          72                  33
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1082
+               X1(%)             X1+2(%)
+               87.00               71.00
+Evaluado          66                  52
+Correcto          58                  37
+Error: no se encontro el rotamero en el pdb nativo                         T1090 LEU "  191
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1090
+               X1(%)             X1+2(%)
+               32.00               12.00
+Evaluado         144                  83
+Correcto          47                  10
+Estado del arte: lista_casp14_rota4_bb
+PDB: T1099
+               X1(%)             X1+2(%)
+               68.00               43.00
+Evaluado         166                 138
+Correcto         113                  60
+Metodo: lista_casp14_rota4_bb
+       Residuos    Evaluado X1  Evaluado X1+2    Correcto X1            Correcto X1+2
+           6040           5206           3863           3678           1947
+Probabilidad X1          70.65Probabilidad X1+2          50.40
+#############################################
+()
+
+Process finished with exit code 0

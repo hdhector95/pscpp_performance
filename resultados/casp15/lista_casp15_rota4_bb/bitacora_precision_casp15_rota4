@@ -1,0 +1,267 @@
+/bin/python2.7 /home/meraki/Proyectos/biotesis/precision_absoluta.py lista_casp15_original lista_casp15_rota4_bb
+#######################################################
+///// Resultados de medida por Exactitud Absoluta /////
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1104-D1
+               X1(%)             X1+2(%)
+               86.00               64.00
+Evaluado          95                  71
+Correcto          82                  46
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1106s1-D1
+               X1(%)             X1+2(%)
+               78.00               62.00
+Evaluado          61                  48
+Correcto          48                  30
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1106s2-D1
+               X1(%)             X1+2(%)
+               84.00               65.00
+Evaluado          93                  83
+Correcto          79                  54
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1109-D1
+               X1(%)             X1+2(%)
+               91.00               74.00
+Evaluado         164                 127
+Correcto         150                  95
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1120-D1
+               X1(%)             X1+2(%)
+               84.00               71.00
+Evaluado          88                  71
+Correcto          74                  51
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1120-D2
+               X1(%)             X1+2(%)
+               83.00               65.00
+Evaluado          80                  55
+Correcto          67                  36
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1121-D1
+               X1(%)             X1+2(%)
+               70.00               44.00
+Evaluado         161                 121
+Correcto         114                  54
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1121-D2
+               X1(%)             X1+2(%)
+               71.00               46.00
+Evaluado         138                 114
+Correcto          98                  53
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1123-D1
+               X1(%)             X1+2(%)
+               90.00               65.00
+Evaluado         182                 126
+Correcto         165                  82
+Error: no se encontro el rotamero en el pdb nativo                      T1124-D1 PHE "  383
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1124-D1
+               X1(%)             X1+2(%)
+               36.00               18.00
+Evaluado         222                 135
+Correcto          81                  25
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1129s2-D1
+               X1(%)             X1+2(%)
+               82.00               65.00
+Evaluado         452                 323
+Correcto         374                 212
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1133-D1
+               X1(%)             X1+2(%)
+               93.00               81.00
+Evaluado         335                 239
+Correcto         314                 195
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s1-D1
+               X1(%)             X1+2(%)
+               68.00               51.00
+Evaluado         127                  90
+Correcto          87                  46
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s1-D2
+               X1(%)             X1+2(%)
+               57.00               31.00
+Evaluado         185                 148
+Correcto         106                  47
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s2-D1
+               X1(%)             X1+2(%)
+               71.00               50.00
+Evaluado         125                  94
+Correcto          89                  47
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s2-D2
+               X1(%)             X1+2(%)
+               68.00               39.00
+Evaluado         163                 122
+Correcto         111                  48
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s3-D1
+               X1(%)             X1+2(%)
+               78.00               49.00
+Evaluado         117                  83
+Correcto          92                  41
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s3-D2
+               X1(%)             X1+2(%)
+               64.00               34.00
+Evaluado         141                  95
+Correcto          91                  33
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s4-D1
+               X1(%)             X1+2(%)
+               78.00               57.00
+Evaluado         100                  69
+Correcto          78                  40
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s4-D2
+               X1(%)             X1+2(%)
+               62.00               38.00
+Evaluado         192                 152
+Correcto         120                  58
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s4-D3
+               X1(%)             X1+2(%)
+               65.00               47.00
+Evaluado          60                  46
+Correcto          39                  22
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s5-D1
+               X1(%)             X1+2(%)
+               74.00               56.00
+Evaluado         114                  81
+Correcto          85                  46
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s5-D2
+               X1(%)             X1+2(%)
+               59.00               37.00
+Evaluado         188                 150
+Correcto         111                  56
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s6-D1
+               X1(%)             X1+2(%)
+               73.00               43.00
+Evaluado         118                  82
+Correcto          87                  36
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s6-D2
+               X1(%)             X1+2(%)
+               57.00               38.00
+Evaluado         196                 154
+Correcto         112                  60
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s7-D1
+               X1(%)             X1+2(%)
+               74.00               56.00
+Evaluado         254                 197
+Correcto         190                 111
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s8-D1
+               X1(%)             X1+2(%)
+               83.00               60.00
+Evaluado         192                 119
+Correcto         160                  72
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1137s9-D1
+               X1(%)             X1+2(%)
+               77.00               52.00
+Evaluado         203                 136
+Correcto         158                  72
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1139-D1
+               X1(%)             X1+2(%)
+               74.00               49.00
+Evaluado         248                 187
+Correcto         184                  92
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1145-D1
+               X1(%)             X1+2(%)
+               79.00               58.00
+Evaluado          78                  63
+Correcto          62                  37
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1150-D1
+               X1(%)             X1+2(%)
+               86.00               70.00
+Evaluado         281                 230
+Correcto         243                 162
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1157s1-D2
+               X1(%)             X1+2(%)
+               69.00               42.00
+Evaluado         101                  75
+Correcto          70                  32
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1157s1-D3
+               X1(%)             X1+2(%)
+               62.00               32.00
+Evaluado         196                 141
+Correcto         123                  46
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1157s2-D1
+               X1(%)             X1+2(%)
+               53.00               21.00
+Evaluado          91                  70
+Correcto          49                  15
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1157s2-D2
+               X1(%)             X1+2(%)
+               60.00               30.00
+Evaluado         174                 141
+Correcto         105                  43
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1157s2-D3
+               X1(%)             X1+2(%)
+               59.00               35.00
+Evaluado         119                  90
+Correcto          71                  32
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1170-D1
+               X1(%)             X1+2(%)
+               82.00               66.00
+Evaluado         200                 166
+Correcto         165                 110
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1170-D2
+               X1(%)             X1+2(%)
+               88.00               70.00
+Evaluado          59                  47
+Correcto          52                  33
+Error: no se encontro el rotamero en el pdb nativo                      T1180-D1 CYS "  403
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1180-D1
+               X1(%)             X1+2(%)
+               39.00               17.00
+Evaluado         272                 156
+Correcto         107                  28
+Error: no se encontro el rotamero en el pdb nativo                      T1187-D1 PRO "  165
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1187-D1
+               X1(%)             X1+2(%)
+               35.00                8.00
+Evaluado         120                  79
+Correcto          42                   7
+Error: no se encontro el rotamero en el pdb nativo                      T1188-D1 ASN "  596
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1188-D1
+               X1(%)             X1+2(%)
+               35.00               10.00
+Evaluado         401                 237
+Correcto         141                  24
+Estado del arte: lista_casp15_rota4_bb
+PDB: T1194-D1
+               X1(%)             X1+2(%)
+               83.00               60.00
+Evaluado         127                  91
+Correcto         106                  55
+Metodo: lista_casp15_rota4_bb
+       Residuos    Evaluado X1  Evaluado X1+2    Correcto X1            Correcto X1+2
+           8813           7013           5104           4882           2484
+Probabilidad X1          69.61Probabilidad X1+2          48.67
+#############################################
+()
+
+Process finished with exit code 0
