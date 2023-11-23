@@ -46,14 +46,14 @@ config.ini
 ## Results
 #### The performance of different side-chain modeling methods on native backbone test sets measured by all residues
 #### NMR(21)
-|   Method   | x1(%)  | χ2(%)  |
+|   Method   | χ1(%)  | χ1+2(%)  |
 |:----------:|:------:|:------:|
 |   FASPR    | 	56.92 | 	34.83 |
 |   SCWRL4   | 	54.70 | 	32.88 |
 | OSCAR-star | 	58.16 | 	34.60 |
 | OPUS-Rota4 | 	62.04 | 	35.47 |
 #### XRAY(21)
-|   Method   | x1(%)  |  χ2(%) |
+|   Method   | χ1(%)  |  χ1+2(%) |
 |:----------:|:------:|:------:|
 |   FASPR    | 	77.30 | 	61.92 |
 |   SCWRL4   | 	77.44 | 	61.30 |
