@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright 2007, Michael J. Harms
+# Copyright 2023, Carlos Bobadilla
 # This program is distributed under General Public License v. 3.  See the file
 # COPYING for a copy of the license.
 
