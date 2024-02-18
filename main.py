@@ -13,7 +13,7 @@ __author__ = "Hector Diaz"
 __date__ = "08092021"
 
 import os, configparser
-from lib.funtions import print_to_excel, search_line
+from lib.funtions import print_to_excel, init_excel_results, print_to_excel_results, search_line, xls_insert_resul
 from lib.pdb_torsionCHI import torsionCHI
 
 
@@ -39,6 +39,10 @@ def main():
     pdb_origin_file = os.path.abspath('.')+"/"+config.get('configuracion','pdb_origin_file') # archivo con lista de pdbs originales
     pdb_processed_files = os.path.abspath('.')+"/"+config.get('configuracion','pdb_processed_files') # archivo con lista de pdbs procesados
 
+    # si se va imprimir en excel inicializamos el excel de resultados
+    if print_pdb_excel:
+        exl_result, exl_result_sheet = init_excel_results()
+        row_result = 1
     file_list = []
     with open(pdb_origin_file, 'r') as list_origin:
         file_list.append(list_origin.read().splitlines())
@@ -191,7 +195,17 @@ def main():
                 print("".join(rotameros_metodo))
             # imprimir en excel los resultados
             if print_pdb_excel:
-                print_to_excel(rotameros_metodo, pdb_name, estado_arte)
+                print_to_excel(rotameros_metodo, pdb_name, estado_arte, correct_angle)
+                xls_insert_resul(exl_result_sheet,row_result,{
+                    'metodo': estado_arte,
+                    'pdb': pdb_name,
+                    'residuos': len(rotameros_metodo) - 1,
+                    'evaluadox1': evaluadox1,
+                    'evaluadox1x2': evaluadox1x2,
+                    'correctox1': correctox1,
+                    'correctox1x2': correctox1x2,
+                })
+                row_result = row_result + 1
 
     # imprimir res_metodos
     for est_arte in res_metodos:
@@ -207,6 +221,11 @@ def main():
         print('%15s%15.2F%17s%15.2F' % ('Probabilidad X1', p1, 'Probabilidad X1+2', p2))
         print('#############################################')
         print()
+
+    # imprimir res_metodos en excel
+    if print_pdb_excel:
+        # print_to_excel_results(res_metodos)
+        exl_result.close()
 
 
 if __name__ == "__main__":
