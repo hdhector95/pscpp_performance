@@ -65,8 +65,11 @@ def get_atom_identifier(atom):
 # Ruta de lista de archivos PDB a comparar
 # deben tener la misma cantidad de pdbs y estar ordenados uno a uno
 # se compara el pdb1 con el pdb1, pdb2 con pdb2, etc
-file_list_native_path = os.path.abspath('.')+"/pdb_list_origin_XRAY"
-file_list_processed_path = os.path.abspath('.')+"/pdb_list_processed_XRAY"
+# file_list_native_path = os.path.abspath('.')+"/pdb_list_origin_XRAY"
+# file_list_processed_path = os.path.abspath('.')+"/pdb_list_processed_XRAY"
+file_list_native_path = os.path.abspath('.')+"/pdb_list_origin_NMR"
+file_list_processed_path = os.path.abspath('.')+"/pdb_list_processed_NMR_bp"
+
 
 # inicializar variables
 file_list_native = [] # lista de archivos que continen lista de pdbs
@@ -159,7 +162,12 @@ for line in file_list_processed:
         # Calcular el RMSD
         #rmsd = superimposer.rms
         rmsd = calcular_rmsd_ecuacion([equivalent_atoms_structure1], [equivalent_atoms_structure2])
-        print(f"Comparando pdb = {estructura1.header['idcode']}")
+        if estructura1.header['idcode']:
+            pdb_name = estructura1.header['idcode']
+        else:
+            # scar de pdb_list_native[i]
+            pdb_name = pdb_list_native[i].split('/')[-1].split('.')[0]
+        print(f"Comparando pdb = {pdb_name}")
         print(f"El RMSD entre las dos estructuras es: {rmsd:.8f} Å")
 
         # Almacenar los resultados
@@ -167,8 +175,8 @@ for line in file_list_processed:
             # se propone guardar en una estrucutra definida por metodo de comparacion en el que se almacenara una lista
             # de pdbs con su rmsd y p_value ademas de tener un rmsd general de todos los pdbs
             resultados_rmsd[metodo] = {"pdb": {}, "rmsd": 0}
-        if estructura1.header['idcode'] not in resultados_rmsd[metodo]["pdb"]:
-            resultados_rmsd[metodo]["pdb"][estructura1.header['idcode']] = {"rmsd": rmsd}
+        if pdb_name not in resultados_rmsd[metodo]["pdb"]:
+            resultados_rmsd[metodo]["pdb"][pdb_name] = {"rmsd": rmsd}
         else:
             print("Error: el pdb ya fue procesado. PDB duplicado")
 
