@@ -3,6 +3,21 @@ from Bio.PDB import PDBParser, Superimposer
 from scipy.stats import ttest_rel
 
 
+def calcular_rmsd_ecuacion(atoms_structure1, atoms_structure2):
+    """RMSD = raiz cuadrada de la suma de los cuadrados de las diferencias de las coordenadas
+       dividido entre el numero de atomos
+       RMSD = sqrt(1/N * sum((x1-x2)^2 + (y1-y2)^2 + (z1-z2)^2))
+    """
+    N = 0
+    suma = 0
+    for i in range(len(atoms_structure1)):
+        for atom1, atom2 in zip(atoms_structure1[i], atoms_structure2[i]):
+            x1, y1, z1 = atom1.get_coord()
+            x2, y2, z2 = atom2.get_coord()
+            suma += ((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2)
+            N += 1
+    return (suma/N)**0.5
+
 def imprimir_resultados(resultados_rmsd):
     """
     Función para imprimir los resultados de RMSD y p-value en un archivo xlsx
@@ -18,17 +33,16 @@ def imprimir_resultados(resultados_rmsd):
     worksheet.write(row, 0, "Metodo")
     worksheet.write(row, 1, "PDB")
     worksheet.write(row, 2, "RMSD")
-    worksheet.write(row, 3, "P-value")
     row = 1
     for metodo in resultados_rmsd:
         for pdb in resultados_rmsd[metodo]["pdb"]:
             worksheet.write(row, 0, metodo)
             worksheet.write(row, 1, pdb)
             worksheet.write(row, 2, resultados_rmsd[metodo]["pdb"][pdb]["rmsd"])
-            # worksheet.write(row, 3, ', '.join([f'{p:.8f}' for p in resultados_rmsd[metodo]["pdb"][pdb]["p_value"]]))
-            for j in range(len(p_value)):
-                worksheet.write(row, 3+j, resultados_rmsd[metodo]["pdb"][pdb]["p_value"][j])
             row += 1
+        worksheet.write(row, 1, "RMSD general")
+        worksheet.write(row, 2, resultados_rmsd[metodo]["rmsd"])
+        row += 2
     workbook.close()
 
 def cargar_estructura(archivo_pdb):
@@ -54,7 +68,7 @@ def get_atom_identifier(atom):
 file_list_native_path = os.path.abspath('.')+"/pdb_list_origin_XRAY"
 file_list_processed_path = os.path.abspath('.')+"/pdb_list_processed_XRAY"
 
-# inicializar listas
+# inicializar variables
 file_list_native = [] # lista de archivos que continen lista de pdbs
 pdb_list_native = [] # lista de archivos pdb
 file_list_processed = [] # lista de archivos que continen lista de pdbs
@@ -75,6 +89,7 @@ with open(file_list_processed_path) as f:
 for line in file_list_processed:
     metodo = line.split('/')[-1]
     print("Resultados RMSD para el archivo: ", metodo)
+
     # leemos los path pdb procesados
     pdb_list_processed = [] # lista de archivos pdb
     with open(os.path.abspath('.')+"/"+line) as f:
@@ -82,6 +97,10 @@ for line in file_list_processed:
     if len(pdb_list_native) != len(pdb_list_processed):
         print("Error: las listas de pdbs no tienen la misma cantidad de pdbs")
         exit()
+
+    atoms_structuras_nativas = []  # lista de atomos de todas las estructuras nativas
+    atoms_structuras_procesadas = []  # lista de atomos de todas las estructuras procesadas ya sobrepuestas
+
     for i in range(len(pdb_list_native)):
         # ignoramos pdbs que no se pudieron procesar
         if pdb_list_processed[i] == '***':
@@ -126,36 +145,53 @@ for line in file_list_processed:
         superimposer = Superimposer()
 
         # Establecer los átomos a superponer
+        # aqui se sobre pone (rotar y transladar las estructuras)
         superimposer.set_atoms(equivalent_atoms_structure1, equivalent_atoms_structure2)
 
         # Realizar la superposición
-        superimposer.apply(estructura2.get_atoms())
+        # aqui se aplica y se modifican las cordenadas
+        superimposer.apply(equivalent_atoms_structure2)
+
+        # cargar equivalent_atoms_structure en una sola estructura para 1 y 2
+        atoms_structuras_nativas.append(equivalent_atoms_structure1)
+        atoms_structuras_procesadas.append(equivalent_atoms_structure2)
 
         # Calcular el RMSD
-        rmsd = superimposer.rms
+        #rmsd = superimposer.rms
+        rmsd = calcular_rmsd_ecuacion([equivalent_atoms_structure1], [equivalent_atoms_structure2])
         print(f"Comparando pdb = {estructura1.header['idcode']}")
         print(f"El RMSD entre las dos estructuras es: {rmsd:.8f} Å")
-
-        # Obtener las coordenadas de los átomos después de la superposición
-        coords1 = [atom.get_coord() for atom in equivalent_atoms_structure1]
-        coords2 = [atom.get_coord() for atom in equivalent_atoms_structure2]
-
-        # Realizar la prueba t pareada para comparación de residuos
-        t_statistic, p_value = ttest_rel(coords1, coords2)
-
-        # print(f"Valor de significancia (P) para la comparación de residuos: {p_value:.4f}" .join)
-        print(f"Valor de significancia (P) para la comparación de residuos: {', '.join([f'{p:.8f}' for p in p_value])}")
 
         # Almacenar los resultados
         if metodo not in resultados_rmsd:
             # se propone guardar en una estrucutra definida por metodo de comparacion en el que se almacenara una lista
-            # de pdbs con su rmsd y p_value ademas de tener un rmsd y p_value general de todos los pdbs
-            resultados_rmsd[metodo] = {"pdb": {}, "rmsd": 0, "p_value": []}
+            # de pdbs con su rmsd y p_value ademas de tener un rmsd general de todos los pdbs
+            resultados_rmsd[metodo] = {"pdb": {}, "rmsd": 0}
         if estructura1.header['idcode'] not in resultados_rmsd[metodo]["pdb"]:
-            resultados_rmsd[metodo]["pdb"][estructura1.header['idcode']] = {"rmsd": rmsd, "p_value": p_value}
+            resultados_rmsd[metodo]["pdb"][estructura1.header['idcode']] = {"rmsd": rmsd}
         else:
             print("Error: el pdb ya fue procesado. PDB duplicado")
 
+    # Calcular el RMSD general entre todas las estructuras acumuladas
+    rmsd_general = calcular_rmsd_ecuacion(atoms_structuras_nativas, atoms_structuras_procesadas)
+    # almacenar el rmsd general
+    resultados_rmsd[metodo]["rmsd"] = rmsd_general
+
+
+
+
+
+    # MAE de angulos diedros
+    # a partir de los angulos de torsion X1 X2 de cada rotamero dentro de un pdb
+    # calcular diferencia absoluta entre los angulos
+    # def calculate_mae(angles1nativo, angles2procesado):
+        # return np.mean(np.abs(np.array(angles1) - np.array(angles2)))
+    # mae se define como el promedio de la diferencia absoluta entre el valor del rotomero nativo y el valor del rotamero
+    # de la estructura predicha
+    # por cada X1 y X2 debo calcular la sumatoria de la diferencia de X1nativo y X1predicho el resultado dividir sobre la
+    # cantidad y repetir X2nativo y X2predicho
+
 imprimir_resultados(resultados_rmsd)
+
 
 
