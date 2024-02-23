@@ -1,6 +1,19 @@
+#!/usr/bin/env python
+
+# Copyright 2023, Hector Diaz
+# This program is distributed under General Public License v. 3.
+# COPYING for a copy of the license.
+
+__description__ = \
+    """
+    Determine the RMSD (Root-mean-square deviation)
+    """
+
+__author__ = "Hector Diaz"
+__date__ = "22022023"
+
 import os
 from Bio.PDB import PDBParser, Superimposer
-from scipy.stats import ttest_rel
 
 
 def calcular_rmsd_ecuacion(atoms_structure1, atoms_structure2):
@@ -185,20 +198,7 @@ for line in file_list_processed:
     # almacenar el rmsd general
     resultados_rmsd[metodo]["rmsd"] = rmsd_general
 
-
-
-
-
-    # MAE de angulos diedros
-    # a partir de los angulos de torsion X1 X2 de cada rotamero dentro de un pdb
-    # calcular diferencia absoluta entre los angulos
-    # def calculate_mae(angles1nativo, angles2procesado):
-        # return np.mean(np.abs(np.array(angles1) - np.array(angles2)))
-    # mae se define como el promedio de la diferencia absoluta entre el valor del rotomero nativo y el valor del rotamero
-    # de la estructura predicha
-    # por cada X1 y X2 debo calcular la sumatoria de la diferencia de X1nativo y X1predicho el resultado dividir sobre la
-    # cantidad y repetir X2nativo y X2predicho
-
+# imprimir resultados en un archivo xlsx
 imprimir_resultados(resultados_rmsd)
 
 
